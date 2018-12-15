@@ -14,7 +14,7 @@ class App extends React.Component {
     return (
       <div className="ui container" style={{ marginTop: '10px' }}>
         <button className="ui primary button" onClick={this.onClick}>
-          Get Quote
+          Get Quotes
         </button>
         <ImageList images={this.state.images} />
       </div>
