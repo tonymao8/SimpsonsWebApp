@@ -7,6 +7,7 @@ class App extends React.Component {
   onClick = async term => {
     const response = await simpsons.get();
     this.setState({ images: response.data });
+    this.forceUpdate();
   };
 
   render() {
