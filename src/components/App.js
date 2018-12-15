@@ -8,6 +8,7 @@ class App extends React.Component {
     const response = await simpsons.get();
     this.setState({ images: response.data });
   };
+
   render() {
     return (
       <div className="ui container" style={{ marginTop: '10px' }}>
