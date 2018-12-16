@@ -1,13 +1,18 @@
+$card-padding: 16px !default;
 .card {
-  background: -webkit-linear-gradient(-45deg, #ffe0e3 32%, #a7e0e5 68%);
-  max-width: 10%;
-  max-height: 10%;
+  display: flex;
+  flex-direction: row;
+  padding: $card-padding;
 }
 .card__img {
-  max-width: 10%;
-  max-height: 10%;
+  border: red;
 }
 .card__text {
-  max-width: 10%;
-  max-height: 10%;
+  background-color: yellow;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  font-size: 200%;
+  justify-content: flex-start;
+  padding: $card-padding;
 }

@@ -1,13 +1,13 @@
-.container {
-  margin-top: '10px';
-  max-width: '50%;';
-}
+$margin-top: 16px !default;
 
+.container {
+  margin-top: $margin-top;
+}
 .container--left {
-  margin-top: '10px';
+  left: 0px;
+  margin-top: $margin-top;
   max-width: '50%';
   position: absolute;
-  left: 0px;
   width: 50%;
 }
 .container--right {
@@ -15,10 +15,7 @@
   right: 0px;
   width: 50%;
 }
-
 .btn {
-  display: inline-block;
-  padding: 0.938em 1.875em;
   border: 0.094em solid #743ea5;
   border-radius: 0.625em;
   background-color: #9a68c7;
@@ -26,6 +23,8 @@
     inset 0 0.063em rgba(255, 255, 255, 0.4),
     inset 0 -0.188em rgba(0, 0, 0, 0.15);
   color: #fff;
+  display: inline-block;
+  padding: 0.938em 1.875em;
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: 0 0.063em #000;

@@ -5,11 +5,7 @@ import '../styles/scss/App.scss';
 
 class App extends React.Component {
   state = {
-    images: [],
-    data: {
-      left: [],
-      right: []
-    }
+    images: []
   };
   getQuotes = async term => {
     const response = await simpsons.get();
