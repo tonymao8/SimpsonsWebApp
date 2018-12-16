@@ -2,7 +2,6 @@ import React from 'react';
 import simpsons from '../api/simpsons';
 import ImageList from './ImageList';
 import '../styles/scss/App.scss';
-import { callbackify } from 'util';
 
 class App extends React.Component {
   state = {
@@ -15,7 +14,6 @@ class App extends React.Component {
   getQuotes = async term => {
     const response = await simpsons.get();
     this.setState({ images: response.data });
-    this.sortImages(this.state.images);
   };
 
   sortImages() {
@@ -25,21 +23,21 @@ class App extends React.Component {
     const rightList = this.state.images.filter(
       word => word.characterDirection === 'Right'
     );
-
-    this.setState({ data: { left: leftList, right: rightList } });
+    return { left: leftList, right: rightList };
   }
 
   render() {
+    var data = this.sortImages(this.state.images);
     return (
       <div className="container">
         <button className="btn" onClick={this.getQuotes}>
           Get Quotes
         </button>
         <div className="container--left">
-          <ImageList images={this.state.data.left} />
+          <ImageList images={data.left} />
         </div>
         <div className="container--right">
-          <ImageList images={this.state.data.right} />
+          <ImageList images={data.right} />
         </div>
       </div>
     );
