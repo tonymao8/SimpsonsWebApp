@@ -14,6 +14,7 @@ class App extends React.Component {
   renderContent = async term => {
     const response = await simpsons.get();
     this.setState({ images: response.data });
+    this.sortImages(this.state.images);
   };
 
   sortImages(image_list) {
@@ -27,16 +28,10 @@ class App extends React.Component {
         rightList.push(image_list[i]);
       }
     }
-    this.setState({
-      data: {
-        left: leftList,
-        right: rightList
-      }
-    });
+    this.setState({ data: { left: leftList, right: rightList } });
   }
 
   render() {
-    this.sortImages(this.state.images);
     return (
       <div className="container">
         <button className="btn" onClick={this.renderContent}>
