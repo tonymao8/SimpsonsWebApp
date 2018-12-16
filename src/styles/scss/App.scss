@@ -1,3 +1,35 @@
-.App {
-  background-color: blue;
+.container {
+  //background-image: url('https://lionel-rowe.github.io/simpsons_quotes/simpsonslogo.svg');
+  margin-top: '10px';
+  max-width: '50%;';
+}
+
+.container--left {
+  margin-top: '10px';
+  max-width: '50%';
+  left: 0px;
+  width: 50%;
+}
+.container--right {
+  margin-top: '10px';
+  max-width: '50%';
+  right: 0px;
+  width: 50%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.938em 1.875em;
+  border: 0.094em solid #743ea5;
+  border-radius: 0.625em;
+  background-color: #9a68c7;
+  box-shadow: 0 0.375em 0.313em -0.313em rgba(0, 0, 0, 0.8),
+    inset 0 0.063em rgba(255, 255, 255, 0.4),
+    inset 0 -0.188em rgba(0, 0, 0, 0.15);
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 0.063em #000;
+  cursor: pointer;
+  font: bold 1.8rem sans-serif;
 }
