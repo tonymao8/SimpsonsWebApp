@@ -2,6 +2,7 @@ import React from 'react';
 import simpsons from '../api/simpsons';
 import ImageList from './ImageList';
 import '../styles/scss/App.scss';
+import { callbackify } from 'util';
 
 class App extends React.Component {
   state = {
@@ -18,16 +19,13 @@ class App extends React.Component {
   };
 
   sortImages() {
-    var arrayLength = this.state.images.length;
-    var leftList = [];
-    var rightList = [];
-    for (let i = 0; i < arrayLength; i++) {
-      if (this.state.images[i].characterDirection === 'Left') {
-        leftList.push(this.state.images[i]);
-      } else {
-        rightList.push(this.state.images[i]);
-      }
-    }
+    const leftList = this.state.images.filter(
+      word => word.characterDirection === 'Left'
+    );
+    const rightList = this.state.images.filter(
+      word => word.characterDirection === 'Right'
+    );
+
     this.setState({ data: { left: leftList, right: rightList } });
   }
 
