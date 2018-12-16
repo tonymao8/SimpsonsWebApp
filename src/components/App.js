@@ -11,21 +11,21 @@ class App extends React.Component {
       right: []
     }
   };
-  renderContent = async term => {
+  getQuotes = async term => {
     const response = await simpsons.get();
     this.setState({ images: response.data });
     this.sortImages(this.state.images);
   };
 
-  sortImages(image_list) {
-    var arrayLength = image_list.length;
+  sortImages() {
+    var arrayLength = this.state.images.length;
     var leftList = [];
     var rightList = [];
     for (let i = 0; i < arrayLength; i++) {
-      if (image_list[i].characterDirection === 'Left') {
-        leftList.push(image_list[i]);
+      if (this.state.images[i].characterDirection === 'Left') {
+        leftList.push(this.state.images[i]);
       } else {
-        rightList.push(image_list[i]);
+        rightList.push(this.state.images[i]);
       }
     }
     this.setState({ data: { left: leftList, right: rightList } });
@@ -34,7 +34,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <button className="btn" onClick={this.renderContent}>
+        <button className="btn" onClick={this.getQuotes}>
           Get Quotes
         </button>
         <div className="container--left">

@@ -11,7 +11,7 @@ class ImageList extends React.Component {
             src={image.image}
             alt="Simpson Character"
           />
-          <text>{image.quote}</text>'
+          {image.quote}
         </div>
       );
     });
