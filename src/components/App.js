@@ -1,6 +1,7 @@
 import React from 'react';
 import simpsons from '../api/simpsons';
 import ImageList from './ImageList';
+import '../styles/App.scss';
 
 class App extends React.Component {
   state = { images: [] };
@@ -12,11 +13,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: '10px' }}>
-        <button className="ui primary button" onClick={this.onClick}>
-          Get Quotes
-        </button>
-        <ImageList images={this.state.images} />
+      <div id="parent">
+        <div
+          className="ui left aligned container"
+          style={{ marginTop: '10px', maxWidth: '50%' }}
+        >
+          <button className="ui primary button" onClick={this.onClick}>
+            Get Quotes
+          </button>
+          <ImageList images={this.state.images} />
+        </div>
+        <div
+          className="ui right aligned container"
+          style={{ marginTop: '10px', maxWidth: '50%' }}
+        >
+          Done
+        </div>
       </div>
     );
   }
