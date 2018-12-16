@@ -24,9 +24,15 @@ class App extends React.Component {
       if (image_list[i].characterDirection === 'Left') {
         leftList.push(image_list[i]);
       } else {
-        rightList.right.push(image_list[i]);
+        rightList.push(image_list[i]);
       }
     }
+    this.setState({
+      data: {
+        left: leftList,
+        right: rightList
+      }
+    });
   }
 
   render() {
