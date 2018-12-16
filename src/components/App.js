@@ -16,20 +16,35 @@ class App extends React.Component {
     this.setState({ images: response.data });
   };
 
-  sortImages(image_list) {
-    var arrayLength = image_list.length;
-    for (let i = 0; i < arrayLength; i++) {
-      if (image_list[i].characterDirection === 'Left') {
-        this.state.data.left.push(image_list[i]);
-      } else {
-        this.state.data.right.push(image_list[i]);
-      }
-    }
-  }
+  // sortImages(image_list) {
+  //   var arrayLength = image_list.length;
+  //   //var leftList = [];
+  //   //var rightList = [];
+  //   for (let i = 0; i < arrayLength; i++) {
+  //     if (image_list[i].characterDirection === 'Left') {
+  //       this.data.left.push(image_list[i]);
+  //     } else {
+  //       this.data.right.push(image_list[i]);
+  //     }
+  //   }
+  //   // this.setState({data:{
+  //   //   left: leftList,
+  //   // right: rightList}});
+  // }
 
   render() {
     const images = this.state.images;
-    this.sortImages(images);
+    var arrayLength = images.length;
+    //var leftList = [];
+    //var rightList = [];
+    for (let i = 0; i < arrayLength; i++) {
+      if (images[i].characterDirection === 'Left') {
+        this.data.left.push(images[i]);
+      } else {
+        this.data.right.push(images[i]);
+      }
+    }
+    //this.sortImages(images);
     return (
       <div className="container">
         <button className="btn" onClick={this.renderContent}>

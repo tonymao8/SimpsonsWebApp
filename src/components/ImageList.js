@@ -3,7 +3,7 @@ import '../styles/scss/App.scss';
 
 class ImageList extends React.Component {
   render() {
-    var imageCards = this.props.data.map(image => {
+    var imageCards = this.props.images.map(image => {
       return (
         <div className="card">
           <img
